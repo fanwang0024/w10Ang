@@ -4,12 +4,16 @@ const mongoose = require('mongoose');
 const movie = require('./models/movie');
 const actor = require('./models/actor');
 const path = require('path');
+const cors = require('cors');
+
 
 const actors = require('./routers/actor');
 const movies = require('./routers/movie');
 
 const app = express();
 
+
+app.use(cors());
 app.listen(8080);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));

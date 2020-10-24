@@ -28,7 +28,7 @@ export class AddmovieComponent implements OnInit {
   onSaveMovie() {
     let obj = { title: this.title, year: this.year };
     this.dbService.createMovie(obj).subscribe(result => {
-      this.router.navigate(["/deletemovies"]);
+      this.router.navigate(["/listmovies"]);
     });
   }
   

@@ -21,6 +21,8 @@ export class Addactor2movieComponent implements OnInit {
   movieId: string = "";
 
   ngOnInit(): void {
+    this.onGetActors();
+    this.onGetMovies();
   }
 
   onSelectMovie(item){
@@ -43,9 +45,14 @@ export class Addactor2movieComponent implements OnInit {
     })
   }
 
+  onGetActors(){
+    this.dbService.getActors().subscribe((data: any[])=>{
+      this.actorsDB = data;
+    });
+  }
   onGetMovies(){
     this.dbService.getMovies().subscribe((data: any[]) =>{
       this.moviesDB = data;
-    })
+    });
   }
 }
